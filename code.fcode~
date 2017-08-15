@@ -1,12 +1,49 @@
+var a 1
+var
+set a 4
+print 1
 
 
 
+< start 
+label start
+variable a %1
+variable b %2
+variable n %3
+set n 8
+set %4 0
+set a 1
+jump f_start
+print b
+return
+< end 
 
+< factoril function 
+label f_start
+test n %4
+je zero
+jne not_zero
+return
+
+< if zero 
+label zero
+product b a
+return
+
+< if not zero 
+label not_zero
+product b n
+add n #-1
+jump f_start
+return
+
+< end of factorial function >
 
 
 <
 /////////////////// DEFAULT ////////////////////
 >
+write2 " "
 write  -----------------------------------------
 write  _TODO:_make_jump_command_user_friendly.
 write  -----------------------------------------
@@ -24,4 +61,4 @@ write  -----------------------------------------
 
 >
 
-
+write2 " add map for variables and places. can be working good with jump command. "
