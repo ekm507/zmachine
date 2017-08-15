@@ -1,25 +1,28 @@
-write  --------------------------------------------------
-write  _fibbonatchi_series_with_self_returning_function
-write  --------------------------------------------------
 
 
-set 1 1
-set 2 1
-set 0 8
 
-set 6 0
-equality 0 6
-je 17
-mov 3 1
-mov 4 2
-add 5 3 4
-mov 1 4
-mov 2 5
-print 2
 
-write |
-write |
+
+
+<
+/////////////////// DEFAULT ////////////////////
+>
+
 write  -----------------------------------------
 write  _TODO:_make_jump_command_user_friendly.
 write  -----------------------------------------
+
+
+
+<
+.............................................
+. 											.|
+. 	this code is written in FASM language	.|
+.	written by erFan.						.|
+.	96-5-24									.|
+.											.|
+.............................................
+
+>
+
 

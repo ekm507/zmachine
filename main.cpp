@@ -72,18 +72,62 @@ int main(int argc, char** argv)
 		{
 			a = value(code[++i]);
 			b = value(code[++i]);
-			c = value(code[++i]);
-			memory[a] = memory[b] + memory[c];
+			memory[a] = memory[a] + memory[b];
 		}
+		
+		//xor
+		else if(command == "xor")
+		{
+			a = value(code[++i]);
+			b = value(code[++i]);
+			memory[a] = memory[a] xor memory[b];
+		}
+		
+		
+		//and
+		else if(command == "and")
+		{
+			a = value(code[++i]);
+			b = value(code[++i]);
+			memory[a] = memory[a] and memory[b];
+		}
+		
+		
+		//or
+		else if(command == "or")
+		{
+			a = value(code[++i]);
+			b = value(code[++i]);
+			memory[a] = memory[a] or memory[b];
+		}
+		
 		
 		//product for multiplying. product a b c --> a = b * c			
 		else if(command == "product")
 		{
 			a = value(code[++i]);
 			b = value(code[++i]);
-			c = value(code[++i]);
-			memory[a] = memory[b] * memory[c];
+			memory[a] = memory[a] * memory[b];
 		}
+		
+		
+		//divide
+		else if(command == "divide")
+		{
+			a = value(code[++i]);
+			b = value(code[++i]);
+			memory[a] = memory[a] / memory[b];
+		}
+		
+		
+		//mod
+		else if(command == "mod")
+		{
+			a = value(code[++i]);
+			b = value(code[++i]);
+			memory[a] = memory[a] % memory[b];
+		}
+		
 		
 		//jump between code lines. jump a --> go a lines forward.
 		else if(command == "jump")
@@ -129,7 +173,18 @@ int main(int argc, char** argv)
 			else
 				reg[1] = 0;
 		}
+		
+		////////////////////MARKDOWN COMMANDS///////////////////////
+		else if(command == "<")
+		{
+			while(command != ">")
+			{
+				command = code[++i];
+			}
+			continue;
+		}
 		////////////////////DEBUGGING COMMANDS//////////////////////
+		
 		//print for debugging. print value of a memory stage.
 		else if(command == "print")
 		{
@@ -146,9 +201,27 @@ int main(int argc, char** argv)
 		//outut a message. for debugging.(without endl)
 		else if(command == "write2")
 		{
-			cout << code[++i];
+			command = code[++i];
+			if(command == "\"")
+			{
+				command = code[++i];
+				while(command != "\"")
+				{
+					cout << command <<" ";
+					command = code[++i];
+				}
+			}
+			else
+				cout << command;
+			cout << endl;
+			continue;
 		}
 		
+		else if(command == "get")
+		{
+			a = value(code[++i]);
+			cin >> memory[a];
+		}
 				
 		else
 			cout << "undefined command: " << command << endl;
@@ -158,4 +231,17 @@ int main(int argc, char** argv)
 	codefile.close();
 	return 0;
 }
+
+
+
+
+/*
+A method
+
+
+
+
+
+
+*/
 
