@@ -6,6 +6,7 @@ using namespace std;
 
 const long MEMORY_SIZE = 3000;
 const long FILE_SIZE = 3000;
+const long STACK_SIZE = 1000;
 
 long value(string theString)
 {
@@ -28,6 +29,8 @@ long value(string theString)
 int main(int argc, char** argv)
 {
 	long long memory[MEMORY_SIZE];
+	long long stack[STACK_SIZE];
+	long long stack_last = 0;
 	int reg[10];
 	ifstream codefile;
 	codefile.open("code.fcode");
