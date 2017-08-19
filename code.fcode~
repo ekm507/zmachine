@@ -1,52 +1,26 @@
 var a 1
-var
-set a 4
-print 1
+var b 2
+var c 3
+write2 " give two numbers "
+get a
+get b
+write2 " production of numbers given is: "
+mov c a
+mod c b
+print c
 
 
-
-< start 
-label start
-variable a %1
-variable b %2
-variable n %3
-set n 8
-set %4 0
-set a 1
-jump f_start
-print b
-return
-< end 
-
-< factoril function 
-label f_start
-test n %4
-je zero
-jne not_zero
-return
-
-< if zero 
-label zero
-product b a
-return
-
-< if not zero 
-label not_zero
-product b n
-add n #-1
-jump f_start
-return
-
-< end of factorial function >
-
+write2 " ______________________________ "
+write2 " give a number to terminate. "
+get 0
 
 <
 /////////////////// DEFAULT ////////////////////
 >
 write2 " "
-write  -----------------------------------------
-write  _TODO:_make_jump_command_user_friendly.
-write  -----------------------------------------
+write  -------------------------------------------
+write2 " | TODO: make jump command user friendly.. | "
+write  -------------------------------------------
 
 
 
@@ -58,7 +32,13 @@ write  -----------------------------------------
 .	96-5-24									.|
 .											.|
 .............................................
-
 >
 
-write2 " add map for variables and places. can be working good with jump command. "
+
+write2 " "
+write  -------------------------------------------
+write2 " | TODO: add map for variables and places. | "
+write2 " | can be working good with jump command..  | "
+write  -------------------------------------------
+
+write2 "  "
